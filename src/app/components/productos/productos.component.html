@@ -1,3 +1,38 @@
-<p>
-  productos works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+              <h5 class="card-title">Lista de productos</h5>
+          </div>
+            <div class="card-body">
+              <app-filtros></app-filtros>
+              <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col"><button type="button" class="btn btn-info">Mostrar Imagen</button>
+                      </th>
+                      <th scope="col">Producto</th>
+                      <th scope="col">Codigo</th>
+                      <th scope="col">Disponible</th>
+                      <th scope="col">Precio</th>
+                      <th scope="col">Raiting</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let producto of productos">
+                      <td></td>
+                      <td>{{producto.nombre}}</td>
+                      <td>{{producto.codigo}}</td>
+                      <td>{{producto.disponible}}</td>
+                      <td>{{producto.precio}}</td>
+                      <td>{{producto.raiting}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
+<app-detalle></app-detalle>
