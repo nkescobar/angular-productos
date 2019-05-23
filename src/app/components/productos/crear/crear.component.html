@@ -1,0 +1,34 @@
+<div class="container" >
+    <div class="m-5">
+        <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="codigo">Codigo</label>
+              <input type="text" class="form-control" formControlName="codigo" id="codigo" placeholder="Ingrese el codigo">
+            </div>
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" formControlName="nombre" id="nombre" placeholder="Ingrese el nombre" required>
+                
+            <div *ngIf="formGroup.get('nombre').invalid && (formGroup.get('nombre').dirty || formGroup.get('nombre').touched)"
+            class="alert alert-danger">
+              <div *ngIf="nombre.hasError('required')">
+              Name is required.
+              </div>
+            </div>
+              </div>
+            <div class="form-group">
+                <label for="descripcion">descripcion</label>
+                <input type="text" class="form-control" formControlName="descripcion" id="descripcion" placeholder="Ingrese la descripcion">
+              </div>
+            <div class="form-group">
+                <label for="disponible">Disponible</label>
+                <input type="text" class="form-control" formControlName="disponible" id="disponible" placeholder="Ingrese el disponible">
+              </div>
+              <div class="form-group">
+                  <label for="Precio">Precio</label>
+                  <input type="text" class="form-control" formControlName="precio" id="Precio" placeholder="Ingrese el Precio">
+                </div>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+          </form>
+    </div>
+  </div>
